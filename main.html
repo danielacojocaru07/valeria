@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://db.onlinewebfonts.com/c/31ed0189fe1ff1e740a652e0f75b77dc?family=Snell+Roundhand+Script" rel="stylesheet"> 
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" type="image/x-con" href="crown_emoji.png">
+        <title>Happy Birthday!</title>
+    </head>
+    <body>
+        <div>
+            <p>Happy Birthday, Valerica!</p>
+            <p>Wish you the best 20s! &#128117</p>
+        </div>
+        <div class="cake">
+            <div class="plate"></div>
+            <div class="layers"></div>
+            <div class="icing"></div>
+            <div class="drip1"></div>
+            <div class="drip2"></div>
+            <div class="drip3"></div>
+            <div class="thread"></div>
+            <div class="candle"></div>
+            <div id="soundStatus"></div>
+        </div>
+        <script>
+            // Get user's microphone input
+            navigator.mediaDevices.getUserMedia({ audio: true })
+              .then(function(stream) {
+                // Create audio context
+                var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                var analyzer = audioContext.createAnalyser();
+                var microphone = audioContext.createMediaStreamSource(stream);
+                var dataArray = new Uint8Array(analyzer.frequencyBinCount);
+          
+                // Connect microphone to analyzer
+                microphone.connect(analyzer);
+          
+                // Check for sound input continuously
+                setInterval(function() {
+                  analyzer.getByteFrequencyData(dataArray);
+                  var maxFrequency = Math.max.apply(null, dataArray);
+                  var soundStatusElement = document.getElementById("soundStatus");
+          
+                  if (maxFrequency > 150) {
+                    soundStatusElement.classList.add("flameOff");
+                  } else {
+                    soundStatusElement.classList.add("flameOn");
+                  }
+                }, 1000); // Check every 1 second
+              })
+              .catch(function(err) {
+                console.error("Error accessing microphone:", err);
+              });
+          </script>
+    </body>
+</html>

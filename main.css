@@ -1,0 +1,282 @@
+@font-face {
+    font-family: "Snell Roundhand Script";
+    src: url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.eot");
+    src: url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.svg#Snell Roundhand Script")format("svg");
+}
+
+body {
+    background-color: #181428;
+}
+
+p {
+    font-family: "Snell Roundhand Script";
+    font-weight: 800;
+    font-size: 40pt;
+    color: white;
+    text-align: center;
+}
+
+.cake {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -70px;
+    margin-left: -125px;
+}
+
+.plate {
+    width: 270px;
+    height: 110px;
+    position: absolute;
+    bottom: -150px;
+    left: -10px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    box-shadow: 
+        0 2px 0 #aaaaaa,
+        0 4px 0 #aaaaaa;
+}
+
+.layers {
+    position: absolute;
+    display: block;
+    top: 95px;
+    width: 250px;
+    height: 100px;
+    background-color: #bb2638;
+    border-radius: 50%;
+    box-shadow:
+        0 5px 0 #bb2638, /* bb2638*/
+        0 10px 0 #b22435,
+        0 15px 0 #a92232,
+        0 20px 0 #a1202f,
+        0 25px 0 #991e2d,
+        0 30px 0 #911c2b,
+        0 35px 0 #8a1b29,
+        0 40px 0 #831a27,
+        0 45px 0 #fff1f3,
+        0 50px 0 #ffd8de,
+        0 55px 0 #a92232,
+        0 60px 0 #b22435,
+        0 65px 0 #a92232,
+        0 70px 0 #a1202f,
+        0 75px 0 #991e2d,
+        0 80px 0 #911c2b,
+        0 85px 0 #8a1b29,
+        0 90px 0 #831a27,
+        0 95px 0 #fff1f3,
+        0 100px 0 #ffd8de,
+        0 105px 0 #a92232,
+        0 110px 0 #b22435,
+        0 115px 0 #a92232,
+        0 120px 0 #a1202f,
+        0 125px 0 #991e2d,
+        0 130px 0 #911c2b,
+        0 135px 0 #8a1b29,
+        0 140px 0 #831a27;
+}
+
+.icing {
+    position: absolute;
+    top: 90px;
+    left: 5px;
+    background-color: #fff1f3;
+    width: 240px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0 5px 0 #ffd9df;
+}
+
+.drip1 {
+    display: block;
+    position: absolute;
+    top: 142px;
+    left: 5px;
+    height: 48px;
+    width: 40px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #fff1f3;
+    transform: skewY(15deg);
+}
+
+.drip2 {
+    display: block;
+    position: absolute;
+    top: 155px;
+    left: 185px;
+    width: 50px;
+    height: 60px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #fff1f3;
+    transform: skewY(-15deg);
+}
+
+.drip3 {
+    display: block;
+    position: absolute;
+    top: 150px;
+    left: 90px;
+    width: 80px;
+    height: 60px;
+    background-color: #fff1f3;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.candle {
+    background-color: #7B020B;
+    position: absolute;
+    width: 16px;
+    height: 60px;
+    border-radius: 8px / 4px;
+    top: 60px;
+    left: 50%;
+    margin-left: -8px;
+    z-index: 10;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #8a020b;
+    }
+}
+
+.flameOn {
+    position: absolute;
+    background-color: orange;
+    width: 15px;
+    height: 35px;
+    border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+    top: 28px;
+    left: 50%;
+    margin-left: -7.5px;
+    z-index: 12;
+    box-shadow:
+        0 0 10px rgba(255, 165, 0, 0.5), /*255, 165, 0*/
+        0 0 20px rgba(255, 165, 0, 0.5),
+        0 0 60px rgba(255, 165, 0, 0.5),
+        0 0 80px rgba(255, 165, 0, 0.5);
+    transform-origin: 50% 90%;
+    animation: flickerOn 1s ease-in-out alternate infinite;
+}
+
+.flameOff {
+    position: absolute;
+    background-color: orange;
+    width: 15px;
+    height: 35px;
+    border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+    top: 28px;
+    left: 50%;
+    margin-left: -7.5px;
+    z-index: 12;
+    box-shadow:
+        0 0 10px rgba(255, 165, 0, 0.5),
+        0 0 20px rgba(255, 165, 0, 0.5),
+        0 0 60px rgba(255, 165, 0, 0.5),
+        0 0 80px rgba(255, 165, 0, 0.5);
+    transform-origin: 50% 90%;
+    animation: flickerOff 1s ease-in-out alternate;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.thread {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    width: 3px;
+    height: 12px;
+    border-radius: 1px 1px 2px 2px;
+    top: 50px;
+    left: 50%;
+    margin-left: -1.5px;
+    z-index: 11;
+}
+
+@keyframes flickerOn {
+    0% {
+        transform: skewX(5deg);
+        box-shadow: 
+            0 0 10px rgba(255, 165, 0, 0.2),
+            0 0 20px rgba(255, 165, 0, 0.2),
+            0 0 60px rgba(255, 165, 0, 0.2),
+            0 0 80px rgba(255, 165, 0, 0.2); }
+    25% {
+        transform: skewX(-5deg);
+        box-shadow:
+            0 0 10px rgba(255, 165, 0, 0.5),
+            0 0 20px rgba(255, 165, 0, 0.5),
+            0 0 60px rgba(255, 165, 0, 0.5),
+            0 0 80px rgba(255, 165, 0, 0.5); }
+    50% {
+        transform: skewX(10deg);
+        box-shadow:
+            0 0 10px rgba(255, 165, 0, 0.3),
+            0 0 20px rgba(255, 165, 0, 0.3),
+            0 0 60px rgba(255, 165, 0, 0.3),
+            0 0 80px rgba(255, 165, 0, 0.3); }
+    75% {
+        transform: skewX(-10deg);
+        box-shadow:
+            0 0 10px rgba(255, 165, 0, 0.4),
+            0 0 20px rgba(255, 165, 0, 0.4),
+            0 0 60px rgba(255, 165, 0, 0.4),
+            0 0 80px rgba(255, 165, 0, 0.4); }
+    100% {
+        transform: skewX(5deg);
+        box-shadow:
+            0 0 10px rgba(255, 165, 0, 0.5),
+            0 0 20px rgba(255, 165, 0, 0.5),
+            0 0 60px rgba(255, 165, 0, 0.5),
+            0 0 80px rgba(255, 165, 0, 0.5); }
+}
+
+@keyframes flickerOff{
+    0% {
+        transform: skewX(5deg) scale(0.8);
+        box-shadow: 
+            0 0 10px rgba(255, 165, 0, 0.2),
+            0 0 20px rgba(255, 165, 0, 0.2),
+            0 0 60px rgba(255, 165, 0, 0.2),
+            0 0 80px rgba(255, 165, 0, 0.2); }
+    25% {
+        transform: skewX(-5deg) scale(0.6);
+        box-shadow:
+            0 0 10px rgba(255, 165, 0, 0.5),
+            0 0 20px rgba(255, 165, 0, 0.5),
+            0 0 60px rgba(255, 165, 0, 0.5),
+            0 0 80px rgba(255, 165, 0, 0.5); }
+    50% {
+        transform: skewX(10deg) scale(0.4);
+        box-shadow:
+            0 0 10px rgba(255, 165, 0, 0.3),
+            0 0 20px rgba(255, 165, 0, 0.3),
+            0 0 60px rgba(255, 165, 0, 0.3),
+            0 0 80px rgba(255, 165, 0, 0.3); }
+    75% {
+        transform: skewX(-10deg) scale(0.2);
+        box-shadow:
+            0 0 10px rgba(255, 165, 0, 0.4),
+            0 0 20px rgba(255, 165, 0, 0.4),
+            0 0 60px rgba(255, 165, 0, 0.4),
+            0 0 80px rgba(255, 165, 0, 0.4); }
+    100% {
+        transform: skewX(5deg) scale(0);
+        box-shadow:
+            0 0 10px rgba(255, 165, 0, 0.5),
+            0 0 20px rgba(255, 165, 0, 0.5),
+            0 0 60px rgba(255, 165, 0, 0.5),
+            0 0 80px rgba(255, 165, 0, 0.5); }    
+}
